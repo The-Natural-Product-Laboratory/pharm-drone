@@ -43,7 +43,7 @@ def find_clusters(df):
     dataframe.
     """
 
-    bandwidth = estimate_bandwidth(df, quantile=0.05)
+    bandwidth = estimate_bandwidth(df, quantile=QUANTILE)
     clt = MeanShift(bandwidth=bandwidth)
     clt.fit(df)
 
@@ -66,8 +66,12 @@ def get_palette(df, num_clusters):
 
         clusters = clusters.append(
             {
-                "mean": [mean[0], mean[1], mean[2]],
-                "std": [std[0], std[1], std[2]]
+                "m0": mean[0],
+                "m1": mean[1],
+                "m2": mean[2],
+                "std0": std[0],
+                "std1": std[1],
+                "std2": std[2]
             },
             ignore_index=True
         )
