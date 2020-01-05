@@ -5,12 +5,15 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+autopep8 = "*"
 
 [packages]
 numpy = "*"
 scikit-learn = "*"
 click = "*"
-autopep8 = "*"
+opencv-contrib-python = "*"
+pandas = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"
